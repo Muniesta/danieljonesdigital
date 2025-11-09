@@ -12,7 +12,7 @@
                     <img
                         src="/images/logo.png"
                         alt="Luxury bathroom interior"
-                        class="w-full h-16 object-cover"
+                        class="w-full h-16 object-cover invert"
                         @error="handleHeroImageError"
                     />
                 </router-link>

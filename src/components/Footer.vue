@@ -8,7 +8,7 @@
                         <img
                             src="/images/logo.png"
                             alt="Luxury bathroom interior"
-                            class="w-auto h-16"
+                            class="w-auto h-16 invert"
                             @error="handleHeroImageError"
                         />
                     </div>

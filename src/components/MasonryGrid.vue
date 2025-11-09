@@ -4,20 +4,30 @@
             <div
                 v-for="item in column1Items"
                 :key="item.id"
-                class="group cursor-pointer relative"
+                class="group cursor-pointer block"
                 @click="navigateToProject(item.id)"
             >
-                <img
-                    class="h-auto max-w-full rounded-lg group-hover:scale-105 transition-transform duration-500"
-                    :src="item.image"
-                    :alt="item.title"
-                />
-                <!-- Hover Overlay -->
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end rounded-lg"
-                >
-                    <div class="p-4 text-white w-full">
-                        <h3 class="text-lg font-semibold line-clamp-1">
+                <div class="relative overflow-hidden rounded-lg">
+                    <video
+                        v-if="item.type === 'video'"
+                        class="w-full h-auto group-hover:scale-105 transition-transform duration-500 object-cover block"
+                        :src="item.image"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                    />
+                    <img
+                        v-else
+                        class="w-full h-auto group-hover:scale-105 transition-transform duration-500 object-cover block"
+                        :src="item.image"
+                        :alt="item.title"
+                    />
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    >
+                        <h3 class="text-lg font-semibold text-white">
                             {{ item.title }}
                         </h3>
                     </div>
@@ -28,20 +38,30 @@
             <div
                 v-for="item in column2Items"
                 :key="item.id"
-                class="group cursor-pointer relative"
+                class="group cursor-pointer block"
                 @click="navigateToProject(item.id)"
             >
-                <img
-                    class="h-auto max-w-full rounded-lg group-hover:scale-105 transition-transform duration-500"
-                    :src="item.image"
-                    :alt="item.title"
-                />
-                <!-- Hover Overlay -->
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end rounded-lg"
-                >
-                    <div class="p-4 text-white w-full">
-                        <h3 class="text-lg font-semibold line-clamp-1">
+                <div class="relative overflow-hidden rounded-lg">
+                    <video
+                        v-if="item.type === 'video'"
+                        class="w-full h-auto group-hover:scale-105 transition-transform duration-500 object-cover block"
+                        :src="item.image"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                    />
+                    <img
+                        v-else
+                        class="w-full h-auto group-hover:scale-105 transition-transform duration-500 object-cover block"
+                        :src="item.image"
+                        :alt="item.title"
+                    />
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    >
+                        <h3 class="text-lg font-semibold text-white">
                             {{ item.title }}
                         </h3>
                     </div>
@@ -52,20 +72,30 @@
             <div
                 v-for="item in column3Items"
                 :key="item.id"
-                class="group cursor-pointer relative"
+                class="group cursor-pointer block"
                 @click="navigateToProject(item.id)"
             >
-                <img
-                    class="h-auto max-w-full rounded-lg group-hover:scale-105 transition-transform duration-500"
-                    :src="item.image"
-                    :alt="item.title"
-                />
-                <!-- Hover Overlay -->
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end rounded-lg"
-                >
-                    <div class="p-4 text-white w-full">
-                        <h3 class="text-lg font-semibold line-clamp-1">
+                <div class="relative overflow-hidden rounded-lg">
+                    <video
+                        v-if="item.type === 'video'"
+                        class="w-full h-auto group-hover:scale-105 transition-transform duration-500 object-cover block"
+                        :src="item.image"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                    />
+                    <img
+                        v-else
+                        class="w-full h-auto group-hover:scale-105 transition-transform duration-500 object-cover block"
+                        :src="item.image"
+                        :alt="item.title"
+                    />
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    >
+                        <h3 class="text-lg font-semibold text-white">
                             {{ item.title }}
                         </h3>
                     </div>
@@ -76,20 +106,30 @@
             <div
                 v-for="item in column4Items"
                 :key="item.id"
-                class="group cursor-pointer relative"
+                class="group cursor-pointer block"
                 @click="navigateToProject(item.id)"
             >
-                <img
-                    class="h-auto max-w-full rounded-lg group-hover:scale-105 transition-transform duration-500"
-                    :src="item.image"
-                    :alt="item.title"
-                />
-                <!-- Hover Overlay -->
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end rounded-lg"
-                >
-                    <div class="p-4 text-white w-full">
-                        <h3 class="text-lg font-semibold line-clamp-1">
+                <div class="relative overflow-hidden rounded-lg">
+                    <video
+                        v-if="item.type === 'video'"
+                        class="w-full h-auto group-hover:scale-105 transition-transform duration-500 object-cover block"
+                        :src="item.image"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                    />
+                    <img
+                        v-else
+                        class="w-full h-auto group-hover:scale-105 transition-transform duration-500 object-cover block"
+                        :src="item.image"
+                        :alt="item.title"
+                    />
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    >
+                        <h3 class="text-lg font-semibold text-white">
                             {{ item.title }}
                         </h3>
                     </div>
@@ -103,6 +143,11 @@
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 
+interface Props {
+    category: "interior" | "product" | "exterior";
+}
+
+const props = defineProps<Props>();
 const router = useRouter();
 
 interface PortfolioItem {
@@ -111,112 +156,237 @@ interface PortfolioItem {
     description: string;
     image: string;
     category: string;
+    type?: "image" | "video";
+    images?: string[];
 }
 
-const portfolioItems: PortfolioItem[] = [
-    // Column 1
+// Interior Design Portfolio Items
+const interiorItems: PortfolioItem[] = [
     {
-        id: 1,
-        title: "Modern Architecture Studio",
-        description:
-            "Contemporary residential design with clean lines and open spaces",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
-        category: "architecture",
+        id: 101,
+        title: "Luxurious Bathroom Design",
+        description: "Modern bathroom with elegant fixtures and finishes",
+        image: "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
+        category: "interior",
+        images: [
+            "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
+            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
+        ],
     },
     {
-        id: 2,
-        title: "Creative Brand Identity",
-        description:
-            "Complete brand redesign for tech startup including logo and guidelines",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
-        category: "branding",
+        id: 102,
+        title: "Contemporary Kitchen Space",
+        description: "Sleek kitchen design with modern appliances",
+        image: "/images/portfolio/interior/Kitchen_Final_Magnific.png",
+        category: "interior",
+        images: ["/images/portfolio/interior/Kitchen_Final_Magnific.png"],
     },
     {
-        id: 3,
-        title: "Digital Art Installation",
-        description: "Interactive multimedia experience for gallery exhibition",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
-        category: "digital",
-    },
-    // Column 2
-    {
-        id: 4,
-        title: "E-commerce Platform",
-        description:
-            "Custom shopping experience with advanced filtering and checkout",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
-        category: "web",
+        id: 103,
+        title: "Elegant Bathroom Render",
+        description: "Photorealistic bathroom visualization",
+        image: "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
+        category: "interior",
+        images: [
+            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
+            "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
+        ],
     },
     {
-        id: 5,
-        title: "Photography Portfolio",
-        description:
-            "Personal portfolio showcasing landscape and portrait work",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
-        category: "photography",
+        id: 104,
+        title: "Textured Wallpaper Design",
+        description: "Interior wall treatment visualization",
+        image: "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
+        category: "interior",
+        images: [
+            "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
+            "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
+        ],
     },
     {
-        id: 6,
-        title: "Mobile App Design",
-        description:
-            "Fitness tracking app with gamification and social features",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
-        category: "mobile",
-    },
-    // Column 3
-    {
-        id: 7,
-        title: "Urban Planning Concept",
-        description: "Sustainable city development with green infrastructure",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
-        category: "architecture",
-    },
-    {
-        id: 8,
-        title: "Music Festival Branding",
-        description: "Complete visual identity for outdoor music festival",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
-        category: "branding",
-    },
-    {
-        id: 9,
-        title: "Product Visualization",
-        description: "3D rendered product shots for premium electronics",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
-        category: "3d",
-    },
-    // Column 4
-    {
-        id: 10,
-        title: "Restaurant Website",
-        description: "Modern dining experience with online reservation system",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
-        category: "web",
-    },
-    {
-        id: 11,
-        title: "Fashion Editorial",
-        description: "High-fashion photo series for magazine publication",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
-        category: "photography",
-    },
-    {
-        id: 12,
-        title: "Corporate Dashboard",
-        description: "Data visualization platform for business intelligence",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg",
-        category: "web",
+        id: 105,
+        title: "Green Wallpaper Concept",
+        description: "Alternative color scheme visualization",
+        image: "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
+        category: "interior",
+        images: [
+            "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
+            "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
+        ],
     },
 ];
 
+// Product Shots Portfolio Items
+const productItems: PortfolioItem[] = [
+    // Column 1 - indices 0-2
+    {
+        id: 201,
+        title: "Product Visualization",
+        description: "High-quality 3D product rendering",
+        image: "/images/portfolio/product/Product_Shot_Magnific.png",
+        category: "product",
+        images: [
+            "/images/portfolio/product/Product_Shot_Magnific.png",
+            "/images/portfolio/product/Product_Shot_02_Magnific.png",
+        ],
+    },
+    {
+        id: 208,
+        title: "Product Detail 1",
+        description: "High-resolution product shot",
+        image: "/images/portfolio/product/Untitled-1.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-1.jpg"],
+    },
+    {
+        id: 204,
+        title: "Final Product Render",
+        description: "Polished product visualization",
+        image: "/images/portfolio/product/Final_Render_F01_Magnific.png",
+        category: "product",
+        images: [
+            "/images/portfolio/product/Final_Render_F01_Magnific.png",
+            "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
+        ],
+    },
+    // Column 2 - indices 3-5
+    {
+        id: 203,
+        title: "Product Shot Detail",
+        description: "Alternative product angle",
+        image: "/images/portfolio/product/Product_Shot_02_Magnific.png",
+        category: "product",
+        images: [
+            "/images/portfolio/product/Product_Shot_02_Magnific.png",
+            "/images/portfolio/product/Product_Shot_Magnific.png",
+        ],
+    },
+    {
+        id: 207,
+        title: "Tire Visualization",
+        description: "Detailed tire product render",
+        image: "/images/portfolio/product/Tyres_02_Magnific.png",
+        category: "product",
+        images: ["/images/portfolio/product/Tyres_02_Magnific.png"],
+    },
+    {
+        id: 209,
+        title: "Product Detail 2",
+        description: "Alternative product visualization",
+        image: "/images/portfolio/product/Untitled-11.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-11.jpg"],
+    },
+    // Column 3 - indices 6-8
+    {
+        id: 205,
+        title: "Interactive Lighting",
+        description: "Product with dynamic lighting setup",
+        image: "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
+        category: "product",
+        images: [
+            "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
+        ],
+    },
+    {
+        id: 202,
+        title: "Drawer System Animation",
+        description: "Animated product visualization",
+        image: "/images/portfolio/product/Drawers_0000.mp4",
+        category: "product",
+        type: "video",
+        images: ["/images/portfolio/product/Drawers_0000.mp4"],
+    },
+    {
+        id: 210,
+        title: "Product Detail 3",
+        description: "Product rendering showcase",
+        image: "/images/portfolio/product/Untitled-111.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-111.jpg"],
+    },
+    // Column 4 - indices 9-11
+    {
+        id: 206,
+        title: "Top-Down Product View",
+        description: "Overhead product visualization",
+        image: "/images/portfolio/product/Topdown_magnific1.png",
+        category: "product",
+        images: ["/images/portfolio/product/Topdown_magnific1.png"],
+    },
+    {
+        id: 213,
+        title: "Media Centre Animation",
+        description: "Interactive media center showcase",
+        image: "/images/portfolio/product/Media_Centre.mp4",
+        category: "product",
+        type: "video",
+        images: ["/images/portfolio/product/Media_Centre.mp4"],
+    },
+    {
+        id: 214,
+        title: "Wardrobe System Animation",
+        description: "Animated wardrobe visualization",
+        image: "/images/portfolio/product/wardrobe_0000.mp4",
+        category: "product",
+        type: "video",
+        images: ["/images/portfolio/product/wardrobe_0000.mp4"],
+    },
+    {
+        id: 211,
+        title: "Product Detail 4",
+        description: "Professional product visualization",
+        image: "/images/portfolio/product/Untitled-1111.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-1111.jpg"],
+    },
+    {
+        id: 212,
+        title: "Product Detail 5",
+        description: "Detailed product render",
+        image: "/images/portfolio/product/Untitled-11111.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-11111.jpg"],
+    },
+];
+
+// Exterior Shots Portfolio Items
+const exteriorItems: PortfolioItem[] = [
+    {
+        id: 301,
+        title: "Northwest House Exterior",
+        description: "Architectural exterior visualization",
+        image: "/images/portfolio/exterior/HOUSE_NORTHWEST_[D02].jpg",
+        category: "exterior",
+        images: ["/images/portfolio/exterior/HOUSE_NORTHWEST_[D02].jpg"],
+    },
+];
+
+// Get items based on category
+const portfolioItems = computed(() => {
+    switch (props.category) {
+        case "interior":
+            return interiorItems;
+        case "product":
+            return productItems;
+        case "exterior":
+            return exteriorItems;
+        default:
+            return interiorItems;
+    }
+});
+
 // Distribute items across columns to maintain Flowbite layout
-const column1Items = computed(() => portfolioItems.slice(0, 3));
-const column2Items = computed(() => portfolioItems.slice(3, 6));
-const column3Items = computed(() => portfolioItems.slice(6, 9));
-const column4Items = computed(() => portfolioItems.slice(9, 12));
+const column1Items = computed(() => portfolioItems.value.slice(0, 4));
+const column2Items = computed(() => portfolioItems.value.slice(4, 7));
+const column3Items = computed(() => portfolioItems.value.slice(7, 11));
+const column4Items = computed(() => portfolioItems.value.slice(11, 15));
 
 const navigateToProject = (id: number) => {
-    router.push(`/project/${id}`);
+    router.push({
+        path: `/project/${id}`,
+        query: { from: props.category },
+    });
 };
 </script>
 

@@ -27,9 +27,19 @@
         </div>
 
         <div v-else>
-            <!-- Hero Image -->
+            <!-- Hero Image/Video -->
             <section class="relative h-96 md:h-[70vh] overflow-hidden">
+                <video
+                    v-if="project.type === 'video'"
+                    :src="project.image"
+                    class="w-full h-full object-cover"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                />
                 <img
+                    v-else
                     :src="project.image"
                     :alt="project.title"
                     class="w-full h-full object-cover"
@@ -101,7 +111,17 @@
                                 class="relative group cursor-pointer rounded-lg overflow-hidden bg-gray-100"
                                 @click="openLightbox(image)"
                             >
+                                <video
+                                    v-if="image.endsWith('.mp4')"
+                                    :src="image"
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    autoplay
+                                    loop
+                                    muted
+                                    playsinline
+                                />
                                 <img
+                                    v-else
                                     :src="image"
                                     :alt="`${project.title} - Image ${
                                         index + 2
@@ -231,7 +251,18 @@
                             ></path>
                         </svg>
                     </button>
+                    <video
+                        v-if="lightboxImage && lightboxImage.endsWith('.mp4')"
+                        :src="lightboxImage"
+                        class="max-w-full max-h-full object-contain"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        @click.stop
+                    />
                     <img
+                        v-else
                         :src="lightboxImage"
                         :alt="project.title"
                         class="max-w-full max-h-full object-contain"
@@ -253,6 +284,7 @@ interface PortfolioItem {
     description: string;
     image: string;
     category: string;
+    type?: "image" | "video";
     images?: string[];
 }
 
@@ -263,168 +295,196 @@ const route = useRoute();
 const loading = ref(true);
 const lightboxImage = ref<string | null>(null);
 
-// Same portfolio items as in MasonryGrid
+// Same portfolio items as in MasonryGrid - combining all categories
 const portfolioItems: PortfolioItem[] = [
+    // Interior Design Portfolio Items
     {
-        id: 1,
-        title: "Modern Architecture Studio",
-        description:
-            "Contemporary residential design with clean lines and open spaces",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
-        category: "architecture",
+        id: 101,
+        title: "Luxurious Bathroom Design",
+        description: "Modern bathroom with elegant fixtures and finishes",
+        image: "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
+        category: "interior",
         images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
+            "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
+            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
         ],
     },
     {
-        id: 2,
-        title: "Creative Brand Identity",
-        description:
-            "Complete brand redesign for tech startup including logo and guidelines",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
-        category: "branding",
+        id: 102,
+        title: "Contemporary Kitchen Space",
+        description: "Sleek kitchen design with modern appliances",
+        image: "/images/portfolio/interior/Kitchen_Final_Magnific.png",
+        category: "interior",
+        images: ["/images/portfolio/interior/Kitchen_Final_Magnific.png"],
+    },
+    {
+        id: 103,
+        title: "Elegant Bathroom Render",
+        description: "Photorealistic bathroom visualization",
+        image: "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
+        category: "interior",
         images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
+            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
+            "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
         ],
     },
     {
-        id: 3,
-        title: "Digital Art Installation",
-        description: "Interactive multimedia experience for gallery exhibition",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
-        category: "digital",
+        id: 104,
+        title: "Textured Wallpaper Design",
+        description: "Interior wall treatment visualization",
+        image: "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
+        category: "interior",
         images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
+            "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
+            "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
         ],
     },
     {
-        id: 4,
-        title: "E-commerce Platform",
-        description:
-            "Custom shopping experience with advanced filtering and checkout",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
-        category: "web",
+        id: 105,
+        title: "Green Wallpaper Concept",
+        description: "Alternative color scheme visualization",
+        image: "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
+        category: "interior",
         images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
+            "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
+            "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
         ],
     },
+    // Product Shots Portfolio Items
     {
-        id: 5,
-        title: "Photography Portfolio",
-        description:
-            "Personal portfolio showcasing landscape and portrait work",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
-        category: "photography",
-        images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
-        ],
-    },
-    {
-        id: 6,
-        title: "Mobile App Design",
-        description:
-            "Fitness tracking app with gamification and social features",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
-        category: "mobile",
-        images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
-        ],
-    },
-    {
-        id: 7,
-        title: "Urban Planning Concept",
-        description: "Sustainable city development with green infrastructure",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
-        category: "architecture",
-        images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
-        ],
-    },
-    {
-        id: 8,
-        title: "Music Festival Branding",
-        description: "Complete visual identity for outdoor music festival",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
-        category: "branding",
-        images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
-        ],
-    },
-    {
-        id: 9,
+        id: 201,
         title: "Product Visualization",
-        description: "3D rendered product shots for premium electronics",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
-        category: "3d",
+        description: "High-quality 3D product rendering",
+        image: "/images/portfolio/product/Product_Shot_Magnific.png",
+        category: "product",
         images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
+            "/images/portfolio/product/Product_Shot_Magnific.png",
+            "/images/portfolio/product/Product_Shot_02_Magnific.png",
         ],
     },
     {
-        id: 10,
-        title: "Restaurant Website",
-        description: "Modern dining experience with online reservation system",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
-        category: "web",
+        id: 208,
+        title: "Product Detail 1",
+        description: "High-resolution product shot",
+        image: "/images/portfolio/product/Untitled-1.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-1.jpg"],
+    },
+    {
+        id: 204,
+        title: "Final Product Render",
+        description: "Polished product visualization",
+        image: "/images/portfolio/product/Final_Render_F01_Magnific.png",
+        category: "product",
         images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg",
+            "/images/portfolio/product/Final_Render_F01_Magnific.png",
+            "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
         ],
     },
     {
-        id: 11,
-        title: "Fashion Editorial",
-        description: "High-fashion photo series for magazine publication",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
-        category: "photography",
+        id: 203,
+        title: "Product Shot Detail",
+        description: "Alternative product angle",
+        image: "/images/portfolio/product/Product_Shot_02_Magnific.png",
+        category: "product",
         images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
+            "/images/portfolio/product/Product_Shot_02_Magnific.png",
+            "/images/portfolio/product/Product_Shot_Magnific.png",
         ],
     },
     {
-        id: 12,
-        title: "Corporate Dashboard",
-        description: "Data visualization platform for business intelligence",
-        image: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg",
-        category: "web",
+        id: 207,
+        title: "Tire Visualization",
+        description: "Detailed tire product render",
+        image: "/images/portfolio/product/Tyres_02_Magnific.png",
+        category: "product",
+        images: ["/images/portfolio/product/Tyres_02_Magnific.png"],
+    },
+    {
+        id: 209,
+        title: "Product Detail 2",
+        description: "Alternative product visualization",
+        image: "/images/portfolio/product/Untitled-11.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-11.jpg"],
+    },
+    {
+        id: 205,
+        title: "Interactive Lighting",
+        description: "Product with dynamic lighting setup",
+        image: "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
+        category: "product",
         images: [
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
-            "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
+            "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
         ],
+    },
+    {
+        id: 202,
+        title: "Drawer System Animation",
+        description: "Animated product visualization",
+        image: "/images/portfolio/product/Drawers_0000.mp4",
+        category: "product",
+        type: "video",
+        images: ["/images/portfolio/product/Drawers_0000.mp4"],
+    },
+    {
+        id: 210,
+        title: "Product Detail 3",
+        description: "Product rendering showcase",
+        image: "/images/portfolio/product/Untitled-111.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-111.jpg"],
+    },
+    {
+        id: 206,
+        title: "Top-Down Product View",
+        description: "Overhead product visualization",
+        image: "/images/portfolio/product/Topdown_magnific1.png",
+        category: "product",
+        images: ["/images/portfolio/product/Topdown_magnific1.png"],
+    },
+    {
+        id: 213,
+        title: "Media Centre Animation",
+        description: "Interactive media center showcase",
+        image: "/images/portfolio/product/Media_Centre.mp4",
+        category: "product",
+        type: "video",
+        images: ["/images/portfolio/product/Media_Centre.mp4"],
+    },
+    {
+        id: 214,
+        title: "Wardrobe System Animation",
+        description: "Animated wardrobe visualization",
+        image: "/images/portfolio/product/wardrobe_0000.mp4",
+        category: "product",
+        type: "video",
+        images: ["/images/portfolio/product/wardrobe_0000.mp4"],
+    },
+    {
+        id: 211,
+        title: "Product Detail 4",
+        description: "Professional product visualization",
+        image: "/images/portfolio/product/Untitled-1111.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-1111.jpg"],
+    },
+    {
+        id: 212,
+        title: "Product Detail 5",
+        description: "Detailed product render",
+        image: "/images/portfolio/product/Untitled-11111.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-11111.jpg"],
+    },
+    // Exterior Shots Portfolio Items
+    {
+        id: 301,
+        title: "Northwest House Exterior",
+        description: "Architectural exterior visualization",
+        image: "/images/portfolio/exterior/HOUSE_NORTHWEST_[D02].jpg",
+        category: "exterior",
+        images: ["/images/portfolio/exterior/HOUSE_NORTHWEST_[D02].jpg"],
     },
 ];
 
@@ -467,7 +527,12 @@ const handleImageError = (event: Event) => {
 };
 
 const goBack = () => {
-    router.push("/");
+    const fromCategory = route.query.from as string;
+    if (fromCategory) {
+        router.push({ path: "/portfolio", query: { category: fromCategory } });
+    } else {
+        router.push("/portfolio");
+    }
 };
 
 const openLightbox = (image: string) => {
