@@ -27,8 +27,8 @@
                 <p
                     class="text-lg md:text-xl lg:text-2xl font-light mb-8 animate-slide-up max-w-2xl mx-auto"
                 >
-                    Digital Artist & Creative Professional specializing in CGI,
-                    3D visualization, and digital design.
+                    Senior Digital Artist & Creative Professional specializing
+                    in CGI, 3D visualization, and digital design.
                 </p>
                 <router-link
                     to="/portfolio"
@@ -70,8 +70,9 @@
 
                 <!-- Portfolio Showcase -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div
-                        class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden"
+                    <router-link
+                        to="/portfolio?category=interior"
+                        class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden cursor-pointer block"
                     >
                         <img
                             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
@@ -85,13 +86,14 @@
                             class="absolute inset-0 flex items-center justify-center"
                         >
                             <h3 class="text-white text-2xl font-bold">
-                                3D Visualization
+                                Interior Design
                             </h3>
                         </div>
-                    </div>
+                    </router-link>
 
-                    <div
-                        class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden"
+                    <router-link
+                        to="/portfolio?category=product"
+                        class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden cursor-pointer block"
                     >
                         <img
                             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
@@ -105,13 +107,14 @@
                             class="absolute inset-0 flex items-center justify-center"
                         >
                             <h3 class="text-white text-2xl font-bold">
-                                Digital Design
+                                Product Shots
                             </h3>
                         </div>
-                    </div>
+                    </router-link>
 
-                    <div
-                        class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden"
+                    <router-link
+                        to="/portfolio?category=exterior"
+                        class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden cursor-pointer block"
                     >
                         <img
                             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
@@ -125,10 +128,10 @@
                             class="absolute inset-0 flex items-center justify-center"
                         >
                             <h3 class="text-white text-2xl font-bold">
-                                Creative Solutions
+                                Exterior Shots
                             </h3>
                         </div>
-                    </div>
+                    </router-link>
                 </div>
 
                 <div class="text-center">
@@ -161,7 +164,7 @@
                             class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mx-auto mb-4"
                         >
                             <svg
-                                class="w-8 h-8 text-white"
+                                class="w-10 h-10 text-white"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -175,10 +178,12 @@
                             </svg>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                            CGI & 3D
+                            Visualization
                         </h3>
                         <p class="text-gray-600">
-                            Photorealistic rendering and 3D visualization
+                            Expertise in offline rendering and real time 3D
+                            visualization workflows. Proficient in software
+                            tools such as 3ds Max, Corona, Substance Suite.
                         </p>
                     </div>
 
@@ -186,25 +191,18 @@
                         <div
                             class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mx-auto mb-4"
                         >
-                            <svg
-                                class="w-8 h-8 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                                />
-                            </svg>
+                            <img
+                                src="/images/post_production.png"
+                                alt="Post Production"
+                                class="w-full h-full object-contain"
+                            />
                         </div>
                         <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                            Digital Design
+                            Post Production
                         </h3>
                         <p class="text-gray-600">
-                            Creative design and visual communication
+                            Proficient in Adobe Photoshop, After Effects, and
+                            Fusion to enhance and aid the production workflow.
                         </p>
                     </div>
 
@@ -212,25 +210,19 @@
                         <div
                             class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mx-auto mb-4"
                         >
-                            <svg
-                                class="w-8 h-8 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                />
-                            </svg>
+                            <img
+                                src="/images/webgl.png"
+                                alt="WebGL"
+                                class="w-full h-full object-contain"
+                            />
                         </div>
                         <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                            Web Development
+                            WebGL and Optimisations
                         </h3>
                         <p class="text-gray-600">
-                            Modern web technologies and frameworks
+                            Full understanding and utilization of low poly work
+                            flow and asset creation to ensure fast running times
+                            with any applications.
                         </p>
                     </div>
 
@@ -238,25 +230,19 @@
                         <div
                             class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mx-auto mb-4"
                         >
-                            <svg
-                                class="w-8 h-8 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-                                />
-                            </svg>
+                            <img
+                                src="/images/code.png"
+                                alt="Code"
+                                class="w-full h-full object-contain"
+                            />
                         </div>
                         <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                            Creative Direction
+                            Code
                         </h3>
                         <p class="text-gray-600">
-                            Conceptual thinking and project execution
+                            Using Python to enhance and optimize work flows
+                            alongside AI, creating scripts and executables for
+                            software such as Photoshop and Substance Painter.
                         </p>
                     </div>
                 </div>
@@ -282,72 +268,169 @@
                             About Me
                         </h2>
                         <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-                            I'm a digital artist passionate about creating
-                            compelling visual experiences. With expertise in
-                            CGI, 3D visualization, and digital design, I
-                            transform ideas into stunning visual realities.
-                        </p>
-                        <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-                            My work focuses on pushing creative boundaries while
-                            maintaining technical excellence. Whether it's
-                            photorealistic rendering, interactive design, or
-                            innovative digital solutions, I'm committed to
-                            delivering exceptional results.
+                            I’m a Senior 3D Artist with over 7 years of
+                            experience specializing in CGI visualization for the
+                            Kitchen, Bedroom, and Bathroom (KBB) industry. My
+                            work bridges creativity and technology, transforming
+                            ideas into photorealistic imagery, immersive
+                            environments, and interactive real-time experiences
+                            that bring concepts to life.
                         </p>
                         <div class="flex space-x-4">
                             <a
-                                href="#"
-                                class="bg-white text-black px-6 py-3 font-medium hover:bg-gray-100 transition-colors duration-200 rounded"
+                                href="mailto:danieljonesdigital@gmail.com"
+                                class="bg-white text-black px-6 py-3 font-medium hover:bg-gray-500 transition-colors duration-200 rounded"
                             >
                                 Get In Touch
                             </a>
-                            <a
-                                href="#"
+                            <button
+                                @click="downloadCV"
                                 class="border border-white text-white px-6 py-3 font-medium hover:bg-white hover:text-black transition-colors duration-200 rounded"
                             >
                                 Download CV
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats/Achievements Section -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <div
-                            class="text-4xl md:text-5xl font-bold text-gray-900 mb-2"
-                        >
-                            50+
+        <!-- Logo Marquee Section -->
+        <section class="py-20 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+                <div class="text-center">
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+                    >
+                        Tools & Software
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Professional expertise with industry-leading software
+                    </p>
+                </div>
+            </div>
+            <div class="relative">
+                <div
+                    class="marquee"
+                    @mouseenter="pauseMarquee"
+                    @mouseleave="resumeMarquee"
+                >
+                    <div ref="marqueeContent" class="marquee-content">
+                        <div class="marquee-group">
+                            <img
+                                src="/logos/3ds-max-logo-png_seeklogo-482396.png"
+                                alt="3ds Max"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/autodesk_maya-logo_brandlogos.net_x7aqy.png"
+                                alt="Maya"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe_Photoshop_CC_icon.svg.png"
+                                alt="Photoshop"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe_After_Effects_CC_icon.svg.png"
+                                alt="After Effects"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe-InDesign-Logo.png"
+                                alt="InDesign"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/substance-painter-logo-png_seeklogo-436297.png"
+                                alt="Substance Painter"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/vray-s4kft0awlfjpivrqh8io.png"
+                                alt="V-Ray"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/unreal-engine-xwo7bd8vu6fzpnkcif.png"
+                                alt="Unreal Engine"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/png-clipart-zbrush-digital-sculpting-human-anatomy-logo-cad-3d-computer-graphics-text.png"
+                                alt="ZBrush"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/blackmagic_design_dv_stufus_fusion_studio_for_mac_1098557.png"
+                                alt="Fusion Studio"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/png-clipart-rendering-render-farm-autodesk-3ds-max-arnold-computer-software-corona-3d-computer-graphics-logo.png"
+                                alt="Corona Renderer"
+                                class="marquee-logo"
+                            />
                         </div>
-                        <div class="text-gray-600">Projects Completed</div>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="text-4xl md:text-5xl font-bold text-gray-900 mb-2"
-                        >
-                            5+
+                        <!-- Duplicate for seamless loop -->
+                        <div class="marquee-group" aria-hidden="true">
+                            <img
+                                src="/logos/3ds-max-logo-png_seeklogo-482396.png"
+                                alt="3ds Max"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/autodesk_maya-logo_brandlogos.net_x7aqy.png"
+                                alt="Maya"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe_Photoshop_CC_icon.svg.png"
+                                alt="Photoshop"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe_After_Effects_CC_icon.svg.png"
+                                alt="After Effects"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe-InDesign-Logo.png"
+                                alt="InDesign"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/substance-painter-logo-png_seeklogo-436297.png"
+                                alt="Substance Painter"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/vray-s4kft0awlfjpivrqh8io.png"
+                                alt="V-Ray"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/unreal-engine-xwo7bd8vu6fzpnkcif.png"
+                                alt="Unreal Engine"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/png-clipart-zbrush-digital-sculpting-human-anatomy-logo-cad-3d-computer-graphics-text.png"
+                                alt="ZBrush"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/blackmagic_design_dv_stufus_fusion_studio_for_mac_1098557.png"
+                                alt="Fusion Studio"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/png-clipart-rendering-render-farm-autodesk-3ds-max-arnold-computer-software-corona-3d-computer-graphics-logo.png"
+                                alt="Corona Renderer"
+                                class="marquee-logo"
+                            />
                         </div>
-                        <div class="text-gray-600">Years Experience</div>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="text-4xl md:text-5xl font-bold text-gray-900 mb-2"
-                        >
-                            30+
-                        </div>
-                        <div class="text-gray-600">Happy Clients</div>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="text-4xl md:text-5xl font-bold text-gray-900 mb-2"
-                        >
-                            100%
-                        </div>
-                        <div class="text-gray-600">Satisfaction Rate</div>
                     </div>
                 </div>
             </div>
@@ -356,6 +439,9 @@
 </template>
 
 <script setup lang="ts">
+import confetti from "canvas-confetti";
+import { onMounted, ref } from "vue";
+
 const handleHeroImageError = (event: Event) => {
     const target = event.target as HTMLImageElement;
     target.style.display = "none";
@@ -365,4 +451,92 @@ const handleAboutImageError = (event: Event) => {
     const target = event.target as HTMLImageElement;
     target.style.display = "none";
 };
+
+const downloadCV = () => {
+    // Trigger confetti animation
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+    });
+
+    // Download the CV
+    const link = document.createElement("a");
+    link.href = "/cv/Daniel_Jones_Digital_CV_2025.pdf";
+    link.download = "Daniel_Jones_Digital_CV_2025.pdf";
+    link.click();
+};
+
+// Marquee animation
+const marqueeContent = ref<HTMLElement | null>(null);
+let scrollPosition = 0;
+let isPaused = false;
+
+const animateMarquee = () => {
+    if (!isPaused && marqueeContent.value) {
+        scrollPosition -= 0.5; // Speed: pixels per frame (increase for faster)
+
+        const firstGroup = marqueeContent.value.querySelector(
+            ".marquee-group"
+        ) as HTMLElement;
+        if (firstGroup) {
+            const groupWidth = firstGroup.offsetWidth;
+
+            // Reset when first group is completely scrolled out
+            if (Math.abs(scrollPosition) >= groupWidth) {
+                scrollPosition = 0;
+            }
+
+            marqueeContent.value.style.transform = `translateX(${scrollPosition}px)`;
+        }
+    }
+
+    requestAnimationFrame(animateMarquee);
+};
+
+onMounted(() => {
+    animateMarquee();
+});
+
+const pauseMarquee = () => {
+    isPaused = true;
+};
+
+const resumeMarquee = () => {
+    isPaused = false;
+};
 </script>
+
+<style scoped>
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: white;
+}
+
+.marquee-content {
+    display: flex;
+    will-change: transform;
+}
+
+.marquee-group {
+    display: flex;
+    padding: 1rem 0;
+    flex-shrink: 0;
+}
+
+.marquee-logo {
+    height: 80px;
+    width: auto;
+    margin: 0 3rem;
+    object-fit: contain;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.marquee-logo:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+</style>
