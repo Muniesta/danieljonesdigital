@@ -12,17 +12,17 @@
                             @error="handleHeroImageError"
                         />
                     </div>
-                    <p class="text-gray-600 mb-4">
+                    <!-- <p class="text-gray-600 mb-4">
                         Where creativity meets innovation. We specialize in
                         creating stunning CGI images for interior design
                         projects, setting new standards in the industry.
-                    </p>
+                    </p> -->
                 </div>
 
                 <!-- Contact Info -->
                 <div class="md:text-right">
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">
-                        Enquiries:
+                        Contact:
                     </h3>
                     <a
                         href="mailto:danieljonesdigital@gmail.com"

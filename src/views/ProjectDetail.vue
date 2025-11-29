@@ -30,8 +30,8 @@
             <!-- Hero Image/Video -->
             <section class="relative h-96 md:h-[70vh] overflow-hidden">
                 <video
-                    v-if="project.type === 'video'"
-                    :src="project.image"
+                    v-if="project.type === 'video' && project.images && project.images[0]"
+                    :src="project.images[0]"
                     class="w-full h-full object-cover"
                     autoplay
                     loop
@@ -45,7 +45,7 @@
                     class="w-full h-full object-cover"
                     @error="handleImageError"
                 />
-                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="absolute inset-0"></div>
 
                 <!-- Back Button -->
                 <button
@@ -94,7 +94,7 @@
 
                     <!-- Additional Images Grid -->
                     <div
-                        v-if="project.images && project.images.length > 1"
+                        v-if="project.images && project.images.length > 0"
                         class="mt-12"
                     >
                         <h3 class="text-xl font-bold text-gray-900 mb-6">
@@ -104,9 +104,7 @@
                             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
                         >
                             <div
-                                v-for="(image, index) in project.images.slice(
-                                    1
-                                )"
+                                v-for="(image, index) in project.images"
                                 :key="index"
                                 class="relative group cursor-pointer rounded-lg overflow-hidden bg-gray-100"
                                 @click="openLightbox(image)"
@@ -124,7 +122,7 @@
                                     v-else
                                     :src="image"
                                     :alt="`${project.title} - Image ${
-                                        index + 2
+                                        index + 1
                                     }`"
                                     class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                                     @error="handleImageError"
@@ -277,16 +275,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
-
-interface PortfolioItem {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    category: string;
-    type?: "image" | "video";
-    images?: string[];
-}
+import { allPortfolioItems } from "../data/portfolioData";
 
 const router = useRouter();
 const route = useRoute();
@@ -295,198 +284,8 @@ const route = useRoute();
 const loading = ref(true);
 const lightboxImage = ref<string | null>(null);
 
-// Same portfolio items as in MasonryGrid - combining all categories
-const portfolioItems: PortfolioItem[] = [
-    // Interior Design Portfolio Items
-    {
-        id: 101,
-        title: "Luxurious Bathroom Design",
-        description: "Modern bathroom with elegant fixtures and finishes",
-        image: "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
-        category: "interior",
-        images: [
-            "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
-            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
-        ],
-    },
-    {
-        id: 102,
-        title: "Contemporary Kitchen Space",
-        description: "Sleek kitchen design with modern appliances",
-        image: "/images/portfolio/interior/Kitchen_Final_Magnific.png",
-        category: "interior",
-        images: ["/images/portfolio/interior/Kitchen_Final_Magnific.png"],
-    },
-    {
-        id: 103,
-        title: "Elegant Bathroom Render",
-        description: "Photorealistic bathroom visualization",
-        image: "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
-        category: "interior",
-        images: [
-            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
-            "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
-        ],
-    },
-    {
-        id: 104,
-        title: "Textured Wallpaper Design",
-        description: "Interior wall treatment visualization",
-        image: "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
-        category: "interior",
-        images: [
-            "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
-            "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
-        ],
-    },
-    {
-        id: 105,
-        title: "Green Wallpaper Concept",
-        description: "Alternative color scheme visualization",
-        image: "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
-        category: "interior",
-        images: [
-            "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
-            "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
-        ],
-    },
-    // Product Shots Portfolio Items
-    {
-        id: 201,
-        title: "Product Visualization",
-        description: "High-quality 3D product rendering",
-        image: "/images/portfolio/product/Product_Shot_Magnific.png",
-        category: "product",
-        images: [
-            "/images/portfolio/product/Product_Shot_Magnific.png",
-            "/images/portfolio/product/Product_Shot_02_Magnific.png",
-        ],
-    },
-    {
-        id: 208,
-        title: "Product Detail 1",
-        description: "High-resolution product shot",
-        image: "/images/portfolio/product/Untitled-1.jpg",
-        category: "product",
-        images: ["/images/portfolio/product/Untitled-1.jpg"],
-    },
-    {
-        id: 204,
-        title: "Final Product Render",
-        description: "Polished product visualization",
-        image: "/images/portfolio/product/Final_Render_F01_Magnific.png",
-        category: "product",
-        images: [
-            "/images/portfolio/product/Final_Render_F01_Magnific.png",
-            "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
-        ],
-    },
-    {
-        id: 203,
-        title: "Product Shot Detail",
-        description: "Alternative product angle",
-        image: "/images/portfolio/product/Product_Shot_02_Magnific.png",
-        category: "product",
-        images: [
-            "/images/portfolio/product/Product_Shot_02_Magnific.png",
-            "/images/portfolio/product/Product_Shot_Magnific.png",
-        ],
-    },
-    {
-        id: 207,
-        title: "Tire Visualization",
-        description: "Detailed tire product render",
-        image: "/images/portfolio/product/Tyres_02_Magnific.png",
-        category: "product",
-        images: ["/images/portfolio/product/Tyres_02_Magnific.png"],
-    },
-    {
-        id: 209,
-        title: "Product Detail 2",
-        description: "Alternative product visualization",
-        image: "/images/portfolio/product/Untitled-11.jpg",
-        category: "product",
-        images: ["/images/portfolio/product/Untitled-11.jpg"],
-    },
-    {
-        id: 205,
-        title: "Interactive Lighting",
-        description: "Product with dynamic lighting setup",
-        image: "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
-        category: "product",
-        images: [
-            "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
-        ],
-    },
-    {
-        id: 202,
-        title: "Drawer System Animation",
-        description: "Animated product visualization",
-        image: "/images/portfolio/product/Drawers_0000.mp4",
-        category: "product",
-        type: "video",
-        images: ["/images/portfolio/product/Drawers_0000.mp4"],
-    },
-    {
-        id: 210,
-        title: "Product Detail 3",
-        description: "Product rendering showcase",
-        image: "/images/portfolio/product/Untitled-111.jpg",
-        category: "product",
-        images: ["/images/portfolio/product/Untitled-111.jpg"],
-    },
-    {
-        id: 206,
-        title: "Top-Down Product View",
-        description: "Overhead product visualization",
-        image: "/images/portfolio/product/Topdown_magnific1.png",
-        category: "product",
-        images: ["/images/portfolio/product/Topdown_magnific1.png"],
-    },
-    {
-        id: 213,
-        title: "Media Centre Animation",
-        description: "Interactive media center showcase",
-        image: "/images/portfolio/product/Media_Centre.mp4",
-        category: "product",
-        type: "video",
-        images: ["/images/portfolio/product/Media_Centre.mp4"],
-    },
-    {
-        id: 214,
-        title: "Wardrobe System Animation",
-        description: "Animated wardrobe visualization",
-        image: "/images/portfolio/product/wardrobe_0000.mp4",
-        category: "product",
-        type: "video",
-        images: ["/images/portfolio/product/wardrobe_0000.mp4"],
-    },
-    {
-        id: 211,
-        title: "Product Detail 4",
-        description: "Professional product visualization",
-        image: "/images/portfolio/product/Untitled-1111.jpg",
-        category: "product",
-        images: ["/images/portfolio/product/Untitled-1111.jpg"],
-    },
-    {
-        id: 212,
-        title: "Product Detail 5",
-        description: "Detailed product render",
-        image: "/images/portfolio/product/Untitled-11111.jpg",
-        category: "product",
-        images: ["/images/portfolio/product/Untitled-11111.jpg"],
-    },
-    // Exterior Shots Portfolio Items
-    {
-        id: 301,
-        title: "Northwest House Exterior",
-        description: "Architectural exterior visualization",
-        image: "/images/portfolio/exterior/HOUSE_NORTHWEST_[D02].jpg",
-        category: "exterior",
-        images: ["/images/portfolio/exterior/HOUSE_NORTHWEST_[D02].jpg"],
-    },
-];
+// Use shared portfolio data
+const portfolioItems = allPortfolioItems;
 
 // Computed properties
 const project = computed(() => {
