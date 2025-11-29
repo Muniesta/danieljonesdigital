@@ -12,7 +12,7 @@
                     class="w-full h-full object-cover"
                     @error="handleHeroImageError"
                 />
-                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="absolute inset-0"></div>
             </div>
 
             <!-- Hero Content -->
@@ -32,7 +32,7 @@
                 </p>
                 <router-link
                     to="/portfolio"
-                    class="btn-primary inline-block animate-slide-up"
+                    class="inline-block animate-slide-up text-white px-6 py-3 rounded-full font-medium border-2 border-white/50 hover:bg-white/90 hover:text-gray-800 hover:border-white transition-all duration-200"
                     style="animation-delay: 0.2s"
                 >
                     View Portfolio
@@ -62,7 +62,7 @@
                     >
                         Featured Work
                     </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p class="text-lg text-gray-600 max-w-5xl mx-auto">
                         A selection of recent projects showcasing creative
                         problem-solving and technical expertise
                     </p>
@@ -71,11 +71,11 @@
                 <!-- Portfolio Showcase -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <router-link
-                        to="/portfolio?category=interior"
+                        to="/portfolio"
                         class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden cursor-pointer block"
                     >
                         <img
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+                            src="/images/thumbs/interior_thumb.jpg"
                             alt="Creative Projects"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
@@ -92,11 +92,11 @@
                     </router-link>
 
                     <router-link
-                        to="/portfolio?category=product"
+                        to="/portfolio"
                         class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden cursor-pointer block"
                     >
                         <img
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+                            src="/images/thumbs/product_thumb.jpg"
                             alt="Digital Solutions"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
@@ -113,11 +113,11 @@
                     </router-link>
 
                     <router-link
-                        to="/portfolio?category=exterior"
+                        to="/portfolio"
                         class="group relative h-64 bg-gray-100 rounded-lg overflow-hidden cursor-pointer block"
                     >
                         <img
-                            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+                            src="/images/thumbs/exterior_thumb.jpg"
                             alt="Professional Work"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
@@ -133,17 +133,152 @@
                         </div>
                     </router-link>
                 </div>
+            </div>
+        </section>
 
+        <!-- Logo Marquee Section -->
+        <section class="py-20 bg-gray-50 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
                 <div class="text-center">
-                    <router-link to="/portfolio" class="btn-outline">
-                        View Full Portfolio
-                    </router-link>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+                    >
+                        Tools & Software
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Professional expertise with industry-leading software
+                    </p>
+                </div>
+            </div>
+            <div class="relative">
+                <div
+                    class="marquee"
+                    @mouseenter="pauseMarquee"
+                    @mouseleave="resumeMarquee"
+                >
+                    <div ref="marqueeContent" class="marquee-content">
+                        <div class="marquee-group">
+                            <img
+                                src="/logos/3ds-max-logo-png_seeklogo-482396.png"
+                                alt="3ds Max"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/autodesk_maya-logo_brandlogos.net_x7aqy.png"
+                                alt="Maya"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe_Photoshop_CC_icon.svg.png"
+                                alt="Photoshop"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe_After_Effects_CC_icon.svg.png"
+                                alt="After Effects"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe-InDesign-Logo.png"
+                                alt="InDesign"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/substance-painter-logo-png_seeklogo-436297.png"
+                                alt="Substance Painter"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/vray-s4kft0awlfjpivrqh8io.png"
+                                alt="V-Ray"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/unreal-engine-xwo7bd8vu6fzpnkcif.png"
+                                alt="Unreal Engine"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/png-clipart-zbrush-digital-sculpting-human-anatomy-logo-cad-3d-computer-graphics-text.png"
+                                alt="ZBrush"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/blackmagic_design_dv_stufus_fusion_studio_for_mac_1098557.png"
+                                alt="Fusion Studio"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/png-clipart-rendering-render-farm-autodesk-3ds-max-arnold-computer-software-corona-3d-computer-graphics-logo.png"
+                                alt="Corona Renderer"
+                                class="marquee-logo"
+                            />
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="marquee-group" aria-hidden="true">
+                            <img
+                                src="/logos/3ds-max-logo-png_seeklogo-482396.png"
+                                alt="3ds Max"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/autodesk_maya-logo_brandlogos.net_x7aqy.png"
+                                alt="Maya"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe_Photoshop_CC_icon.svg.png"
+                                alt="Photoshop"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe_After_Effects_CC_icon.svg.png"
+                                alt="After Effects"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/Adobe-InDesign-Logo.png"
+                                alt="InDesign"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/substance-painter-logo-png_seeklogo-436297.png"
+                                alt="Substance Painter"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/vray-s4kft0awlfjpivrqh8io.png"
+                                alt="V-Ray"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/unreal-engine-xwo7bd8vu6fzpnkcif.png"
+                                alt="Unreal Engine"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/png-clipart-zbrush-digital-sculpting-human-anatomy-logo-cad-3d-computer-graphics-text.png"
+                                alt="ZBrush"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/blackmagic_design_dv_stufus_fusion_studio_for_mac_1098557.png"
+                                alt="Fusion Studio"
+                                class="marquee-logo"
+                            />
+                            <img
+                                src="/logos/png-clipart-rendering-render-farm-autodesk-3ds-max-arnold-computer-software-corona-3d-computer-graphics-logo.png"
+                                alt="Corona Renderer"
+                                class="marquee-logo"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Skills/Expertise Section -->
-        <section class="py-20 bg-gray-50">
+        <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2
@@ -294,147 +429,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Logo Marquee Section -->
-        <section class="py-20 bg-white overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-                <div class="text-center">
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-                    >
-                        Tools & Software
-                    </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Professional expertise with industry-leading software
-                    </p>
-                </div>
-            </div>
-            <div class="relative">
-                <div
-                    class="marquee"
-                    @mouseenter="pauseMarquee"
-                    @mouseleave="resumeMarquee"
-                >
-                    <div ref="marqueeContent" class="marquee-content">
-                        <div class="marquee-group">
-                            <img
-                                src="/logos/3ds-max-logo-png_seeklogo-482396.png"
-                                alt="3ds Max"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/autodesk_maya-logo_brandlogos.net_x7aqy.png"
-                                alt="Maya"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/Adobe_Photoshop_CC_icon.svg.png"
-                                alt="Photoshop"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/Adobe_After_Effects_CC_icon.svg.png"
-                                alt="After Effects"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/Adobe-InDesign-Logo.png"
-                                alt="InDesign"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/substance-painter-logo-png_seeklogo-436297.png"
-                                alt="Substance Painter"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/vray-s4kft0awlfjpivrqh8io.png"
-                                alt="V-Ray"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/unreal-engine-xwo7bd8vu6fzpnkcif.png"
-                                alt="Unreal Engine"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/png-clipart-zbrush-digital-sculpting-human-anatomy-logo-cad-3d-computer-graphics-text.png"
-                                alt="ZBrush"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/blackmagic_design_dv_stufus_fusion_studio_for_mac_1098557.png"
-                                alt="Fusion Studio"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/png-clipart-rendering-render-farm-autodesk-3ds-max-arnold-computer-software-corona-3d-computer-graphics-logo.png"
-                                alt="Corona Renderer"
-                                class="marquee-logo"
-                            />
-                        </div>
-                        <!-- Duplicate for seamless loop -->
-                        <div class="marquee-group" aria-hidden="true">
-                            <img
-                                src="/logos/3ds-max-logo-png_seeklogo-482396.png"
-                                alt="3ds Max"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/autodesk_maya-logo_brandlogos.net_x7aqy.png"
-                                alt="Maya"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/Adobe_Photoshop_CC_icon.svg.png"
-                                alt="Photoshop"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/Adobe_After_Effects_CC_icon.svg.png"
-                                alt="After Effects"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/Adobe-InDesign-Logo.png"
-                                alt="InDesign"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/substance-painter-logo-png_seeklogo-436297.png"
-                                alt="Substance Painter"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/vray-s4kft0awlfjpivrqh8io.png"
-                                alt="V-Ray"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/unreal-engine-xwo7bd8vu6fzpnkcif.png"
-                                alt="Unreal Engine"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/png-clipart-zbrush-digital-sculpting-human-anatomy-logo-cad-3d-computer-graphics-text.png"
-                                alt="ZBrush"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/blackmagic_design_dv_stufus_fusion_studio_for_mac_1098557.png"
-                                alt="Fusion Studio"
-                                class="marquee-logo"
-                            />
-                            <img
-                                src="/logos/png-clipart-rendering-render-farm-autodesk-3ds-max-arnold-computer-software-corona-3d-computer-graphics-logo.png"
-                                alt="Corona Renderer"
-                                class="marquee-logo"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 </template>
 
@@ -512,7 +506,7 @@ const resumeMarquee = () => {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background: white;
+    background: rgb(249 250 251);
 }
 
 .marquee-content {
