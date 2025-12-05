@@ -1,5 +1,6 @@
 // Shared portfolio data source for MasonryGrid and ProjectDetail
 // This ensures data consistency across the application
+// Unsure if adding images only is enough to trigger a build on Netlify
 
 export interface PortfolioItem {
     id: number;
