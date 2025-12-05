@@ -137,7 +137,7 @@ export const column3Items: PortfolioItem[] = [
         description: "Modern concrete finish visualization",
         image: "/images/thumbs/interior/Concrete_Magnific_FINAL.jpg",
         category: "interior",
-        images: ["/images/portfolio/interior/Concrete_Magnific_FINAL.jpg"],
+        images: ["/images/portfolio/interior/Concrete_Magnific_FINAL.png"],
     },
     {
         id: 208,
