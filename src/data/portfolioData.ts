@@ -161,7 +161,7 @@ export const column3Items: PortfolioItem[] = [
         description: "Decorative wallpaper visualization",
         image: "/images/thumbs/product/Wallpapers_01_Magni.jpg",
         category: "product",
-        images: ["/images/portfolio/product/Wallpapers_01_Magni.jpg"],
+        images: ["/images/portfolio/product/Wallpapers_01_Magni.png"],
     },
     {
         id: 301,
