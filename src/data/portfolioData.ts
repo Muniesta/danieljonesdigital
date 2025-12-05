@@ -17,6 +17,23 @@ export interface PortfolioItem {
 
 // COLUMN 1 - Items that appear in the first column
 export const column1Items: PortfolioItem[] = [
+   {
+        id: 102,
+        title: "Contemporary Kitchen Space",
+        description: "Sleek kitchen design with modern appliances",
+        image: "/images/thumbs/interior/Kitchen_Final_Magnific.jpg",
+        category: "interior",
+        images: ["/images/portfolio/interior/Kitchen_Final_Magnific.png"],
+        ],
+     {
+        id: 103,
+        title: "Elegant Bathroom Render",
+        description: "Photorealistic bathroom visualization",
+        image: "/images/thumbs/interior/Bathroom_Shot_FINAL_MAGNIFIC.jpg",
+        category: "interior",
+        images: [
+            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
+    },
     {
         id: 101,
         title: "Luxurious Bathroom Design",
@@ -25,24 +42,6 @@ export const column1Items: PortfolioItem[] = [
         category: "interior",
         images: [
             "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
-        ],
-    },
-    {
-        id: 102,
-        title: "Contemporary Kitchen Space",
-        description: "Sleek kitchen design with modern appliances",
-        image: "/images/thumbs/interior/Kitchen_Final_Magnific.jpg",
-        category: "interior",
-        images: ["/images/portfolio/interior/Kitchen_Final_Magnific.png"],
-    },
-    {
-        id: 103,
-        title: "Elegant Bathroom Render",
-        description: "Photorealistic bathroom visualization",
-        image: "/images/thumbs/interior/Bathroom_Shot_FINAL_MAGNIFIC.jpg",
-        category: "interior",
-        images: [
-            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
         ],
     },
     {
@@ -56,13 +55,12 @@ export const column1Items: PortfolioItem[] = [
         ],
     },
     {
-        id: 104,
-        title: "Textured Wallpaper Design",
-        description: "Interior wall treatment visualization",
-        image: "/images/thumbs/interior/Wallpaper_FINAL_Magnific.jpg",
-        category: "interior",
-        images: [
-            "/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
+        id: 202,
+        title: "Product Detail",
+        description: "High-resolution product shot",
+        image: "/images/thumbs/product/Untitled-1.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Untitled-1.jpg"],
         ],
     },
     {
@@ -79,20 +77,20 @@ export const column1Items: PortfolioItem[] = [
 // COLUMN 2 - Items that appear in the second column
 export const column2Items: PortfolioItem[] = [
     {
-        id: 106,
-        title: "Bathroom Doorway View",
-        description: "Elegant bathroom entrance visualization",
-        image: "/images/thumbs/interior/Bathroom_Shot_Doorway.jpg",
-        category: "interior",
-        images: ["/images/portfolio/interior/Bathroom_Shot_Doorway.jpg"],
+        id: 204,
+        title: "Product Shot Detail",
+        description: "Alternative product angle",
+        image: "/images/thumbs/product/Product_Shot_02_Magnific.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Product_Shot_02_Magnific.png",
     },
     {
-        id: 202,
-        title: "Product Detail",
-        description: "High-resolution product shot",
-        image: "/images/thumbs/product/Untitled-1.jpg",
-        category: "product",
-        images: ["/images/portfolio/product/Untitled-1.jpg"],
+        id: 104,
+        title: "Textured Wallpaper Design",
+        description: "Interior wall treatment visualization",
+        image: "/images/thumbs/interior/Wallpaper_FINAL_Magnific.jpg",
+        category: "interior",
+        images: ["/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
     },
     {
         id: 212,
@@ -156,12 +154,12 @@ export const column3Items: PortfolioItem[] = [
         images: ["/images/portfolio/product/Untitled-11.jpg"],
     },
     {
-        id: 215,
-        title: "Wallpaper Product Design",
-        description: "Decorative wallpaper visualization",
-        image: "/images/thumbs/product/Wallpapers_01_Magni.jpg",
-        category: "product",
-        images: ["/images/portfolio/product/Wallpapers_01_Magni.png"],
+        id: 106,
+        title: "Bathroom Doorway View",
+        description: "Elegant bathroom entrance visualization",
+        image: "/images/thumbs/interior/Bathroom_Shot_Doorway.jpg",
+        category: "interior",
+        images: ["/images/portfolio/interior/Bathroom_Shot_Doorway.jpg"],
     },
     {
         id: 301,
@@ -176,16 +174,6 @@ export const column3Items: PortfolioItem[] = [
 // COLUMN 4 - Items that appear in the fourth column
 export const column4Items: PortfolioItem[] = [
     {
-        id: 201,
-        title: "Product Visualization",
-        description: "High-quality 3D product rendering",
-        image: "/images/thumbs/product/Product_Shot_Magnific.jpg",
-        category: "product",
-        images: [
-            "/images/portfolio/product/Product_Shot_Magnific.png",
-        ],
-    },
-    {
         id: 203,
         title: "Final Product Render",
         description: "Polished product visualization",
@@ -196,13 +184,22 @@ export const column4Items: PortfolioItem[] = [
         ],
     },
     {
-        id: 204,
-        title: "Product Shot Detail",
-        description: "Alternative product angle",
-        image: "/images/thumbs/product/Product_Shot_02_Magnific.jpg",
+        id: 201,
+        title: "Product Visualization",
+        description: "High-quality 3D product rendering",
+        image: "/images/thumbs/product/Product_Shot_Magnific.jpg",
         category: "product",
         images: [
-            "/images/portfolio/product/Product_Shot_02_Magnific.png",
+            "/images/portfolio/product/Product_Shot_Magnific.png",
+        ],
+    },
+    {
+        id: 215,
+        title: "Wallpaper Product Design",
+        description: "Decorative wallpaper visualization",
+        image: "/images/thumbs/product/Wallpapers_01_Magni.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Wallpapers_01_Magni.png"],
         ],
     },
     {
