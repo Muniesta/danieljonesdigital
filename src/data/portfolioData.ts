@@ -24,15 +24,15 @@ export const column1Items: PortfolioItem[] = [
         image: "/images/thumbs/interior/Kitchen_Final_Magnific.jpg",
         category: "interior",
         images: ["/images/portfolio/interior/Kitchen_Final_Magnific.png"],
-        ],
-     {
+    },
+    {
         id: 103,
         title: "Elegant Bathroom Render",
         description: "Photorealistic bathroom visualization",
         image: "/images/thumbs/interior/Bathroom_Shot_FINAL_MAGNIFIC.jpg",
         category: "interior",
         images: [
-            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png",
+            "/images/portfolio/interior/Bathroom_Shot_FINAL_MAGNIFIC.png"],
     },
     {
         id: 101,
@@ -41,8 +41,7 @@ export const column1Items: PortfolioItem[] = [
         image: "/images/thumbs/interior/Bathroom_Shot_Cameo_Magnific.jpg",
         category: "interior",
         images: [
-            "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png",
-        ],
+            "/images/portfolio/interior/Bathroom_Shot_Cameo_Magnific.png"],
     },
     {
         id: 105,
@@ -51,8 +50,7 @@ export const column1Items: PortfolioItem[] = [
         image: "/images/thumbs/interior/Wallpaper_GREEN_Magnific.jpg",
         category: "interior",
         images: [
-            "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png",
-        ],
+            "/images/portfolio/interior/Wallpaper_GREEN_Magnific.png"],
     },
     {
         id: 202,
@@ -61,7 +59,6 @@ export const column1Items: PortfolioItem[] = [
         image: "/images/thumbs/product/Untitled-1.jpg",
         category: "product",
         images: ["/images/portfolio/product/Untitled-1.jpg"],
-        ],
     },
     {
         id: 209,
@@ -82,7 +79,7 @@ export const column2Items: PortfolioItem[] = [
         description: "Alternative product angle",
         image: "/images/thumbs/product/Product_Shot_02_Magnific.jpg",
         category: "product",
-        images: ["/images/portfolio/product/Product_Shot_02_Magnific.png",
+        images: ["/images/portfolio/product/Product_Shot_02_Magnific.png"],
     },
     {
         id: 104,
@@ -90,7 +87,7 @@ export const column2Items: PortfolioItem[] = [
         description: "Interior wall treatment visualization",
         image: "/images/thumbs/interior/Wallpaper_FINAL_Magnific.jpg",
         category: "interior",
-        images: ["/images/portfolio/interior/Wallpaper_FINAL_Magnific.png",
+        images: ["/images/portfolio/interior/Wallpaper_FINAL_Magnific.png"],
     },
     {
         id: 212,
@@ -180,8 +177,7 @@ export const column4Items: PortfolioItem[] = [
         image: "/images/thumbs/product/Final_Render_F01_Magnific.jpg",
         category: "product",
         images: [
-            "/images/portfolio/product/Final_Render_F01_Magnific.png",
-        ],
+            "/images/portfolio/product/Final_Render_F01_Magnific.png"],
     },
     {
         id: 201,
@@ -190,8 +186,7 @@ export const column4Items: PortfolioItem[] = [
         image: "/images/thumbs/product/Product_Shot_Magnific.jpg",
         category: "product",
         images: [
-            "/images/portfolio/product/Product_Shot_Magnific.png",
-        ],
+            "/images/portfolio/product/Product_Shot_Magnific.png"],
     },
     {
         id: 215,
@@ -200,7 +195,6 @@ export const column4Items: PortfolioItem[] = [
         image: "/images/thumbs/product/Wallpapers_01_Magni.jpg",
         category: "product",
         images: ["/images/portfolio/product/Wallpapers_01_Magni.png"],
-        ],
     },
     {
         id: 205,
@@ -217,8 +211,7 @@ export const column4Items: PortfolioItem[] = [
         image: "/images/thumbs/product/Fanta_F01_Interactive LightMix_Magnific.jpg",
         category: "product",
         images: [
-            "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png",
-        ],
+            "/images/portfolio/product/Fanta_F01_Interactive LightMix_Magnific.png"],
     },
     {
         id: 207,
