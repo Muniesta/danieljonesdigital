@@ -195,6 +195,14 @@ export const column3Items: PortfolioItem[] = [
 // COLUMN 4 - Items that appear in the fourth column
 export const column4Items: PortfolioItem[] = [
     {
+        id: 124,
+        title: "Porsche GT3 RS - Tail",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles",
+        image: "/images/thumbs/product/Porsche 3QT Pink_Tail_Final.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Porsche 3QT Pink_Tail_Final.png"],
+    },
+    {
         id: 203,
         title: "Final Product Render",
         description: "Polished product visualization",
