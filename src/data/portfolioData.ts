@@ -20,10 +20,18 @@ export const column1Items: PortfolioItem[] = [
    {
         id: 120,
         title: "Porsche GT3 RS - Open Doors",
-        description: "Porsche GT3 RS - Rendered in Blender with Cycles",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles - Posted in Adobe Suite",
         image: "/images/thumbs/product/Porsche 3QT Pink_Doors_Open_Final.jpg",
         category: "product",
         images: ["/images/portfolio/product/Porsche 3QT Pink_Doors_Open_Final.png"],
+    },
+    {
+        id: 130,
+        title: "Porsche GT3 RS - Top Down",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles - Posted in Adobe Suite",
+        image: "/images/thumbs/product/Porsche 3QT Pink_TopDown_Final.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Porsche 3QT Pink_TopDown_Final.png"],
     },
     {
         id: 102,
@@ -84,7 +92,7 @@ export const column2Items: PortfolioItem[] = [
       {
         id: 121,
         title: "Porsche GT3 RS - Main Shot",
-        description: "Porsche GT3 RS - Rendered in Blender with Cycles",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles - Posted in Adobe Suite",
         image: "/images/thumbs/product/Porsche 3QT Pink_Final.jpg",
         category: "product",
         images: ["/images/portfolio/product/Porsche 3QT Pink_Final.png"],
@@ -136,7 +144,7 @@ export const column3Items: PortfolioItem[] = [
     {
         id: 122,
         title: "Porsche GT3 RS - Interior Shot",
-        description: "Porsche GT3 RS - Rendered in Blender with Cycles",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles - Posted in Adobe Suite",
         image: "/images/thumbs/product/Porsche 3QT Pink_Inside_Car_Final.jpg",
         category: "product",
         images: ["/images/portfolio/product/Porsche 3QT Pink_Inside_Car_Final.png"],
@@ -197,7 +205,7 @@ export const column4Items: PortfolioItem[] = [
     {
         id: 124,
         title: "Porsche GT3 RS - Tail",
-        description: "Porsche GT3 RS - Rendered in Blender with Cycles",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles - Posted in Adobe Suite",
         image: "/images/thumbs/product/Porsche 3QT Pink_Tail_Final.jpg",
         category: "product",
         images: ["/images/portfolio/product/Porsche 3QT Pink_Tail_Final.png"],
