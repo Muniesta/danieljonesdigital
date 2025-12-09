@@ -18,6 +18,14 @@ export interface PortfolioItem {
 // COLUMN 1 - Items that appear in the first column
 export const column1Items: PortfolioItem[] = [
    {
+        id: 120,
+        title: "Porsche GT3 RS - Open Doors",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles",
+        image: "/images/thumbs/product/Porsche 3QT Pink_Doors_Open_Final.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Porsche 3QT Pink_Doors_Open_Final.png"],
+    },
+    {
         id: 102,
         title: "Contemporary Kitchen Space",
         description: "Sleek kitchen design with modern appliances",
@@ -73,6 +81,14 @@ export const column1Items: PortfolioItem[] = [
 
 // COLUMN 2 - Items that appear in the second column
 export const column2Items: PortfolioItem[] = [
+      {
+        id: 121,
+        title: "Porsche GT3 RS - Main Shot",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles",
+        image: "/images/thumbs/product/Porsche 3QT Pink_Final.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Porsche 3QT Pink_Final.png"],
+    },
     {
         id: 204,
         title: "Product Shot Detail",
@@ -117,6 +133,14 @@ export const column2Items: PortfolioItem[] = [
 
 // COLUMN 3 - Items that appear in the third column
 export const column3Items: PortfolioItem[] = [
+    {
+        id: 122,
+        title: "Porsche GT3 RS - Interior Shot",
+        description: "Porsche GT3 RS - Rendered in Blender with Cycles",
+        image: "/images/thumbs/product/Porsche 3QT Pink_Inside_Car_Final.jpg",
+        category: "product",
+        images: ["/images/portfolio/product/Porsche 3QT Pink_Inside_Car_Final.png"],
+    },
     {
         id: 210,
         title: "Wardrobe System",
